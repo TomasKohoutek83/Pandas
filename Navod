@@ -2,30 +2,45 @@ Navod
 
 1. lekce
 
-df.head()     = vypise prvnich 5 radku
-df.info()     = vypise zakladni info
-df.values     = vypise do listu radky framu
-df.columns    = vypise header sloupcu
+        df.head()     = vypise prvnich 5 radku
+        df.info()     = vypise zakladni info
+        df.values     = vypise do listu radky framu
+        df.columns    = vypise header sloupcu
 
 
-2.Lekce
+        df.sort_values("nazev sloupce" , ascending = False)                               =  vypise jenom vybrany sloupec a seradi sestupne
+        df.sort_values(["nazev sloupce", "nazev sloupce"])                                =  vyber vice sloupcu
+        df.sort_values(["nazev sloupce", "nazev sloupce"], ascending = [TRUE, FALSE])     =  vyber vice sloupcu a jejich serazeni
+        df.name["nazev sloupce"]                                                          =  vypise sloupec  (* zmena v hranatych zavorkach
+        df.name[["nazev sloupce", "nazev sloupce"]]                                       =  vypise sloupce  (* zmena v hranatych zavorkach
+        promena = ["nazev sloupce" , "nazev sloupce"]                                     =  vypise sloupce  (* v pripade promena je jedna zavorka
+          df[promena]
+        df["nazev sloupce"] > 50                                                          =  vypis s podminkou !! Vraci boolean !!
+        df[df["nazev sloupce"] == "hodnota"]                                              =  vypis s podminkou
+        df[df["nazev sloupce"] < "hodnota"]                                               =  vypis s podminkou
+        --
+          promena = df["nazev sloupce"] == "hodnota"
+          promena = df["nazev sloupce"] == "hodnota"
+          df[promena & promena]                                                           =  vypis dle podminek
 
-df.sort_values("nazev sloupce" , ascending = False)                               =  vypise jenom vybrany sloupec a seradi sestupne
-df.sort_values(["nazev sloupce", "nazev sloupce"])                                =  vyber vice sloupcu
-df.sort_values(["nazev sloupce", "nazev sloupce"], ascending = [TRUE, FALSE])     =  vyber vice sloupcu a jejich serazeni
-df.name["nazev sloupce"]                                                          =  vypise sloupec  * zmena v hranatych zavorkach
-df.name[["nazev sloupce", "nazev sloupce"]]                                       =  vypise sloupce  * zmena v hranatych zavorkach
-promena = ["nazev sloupce" , "nazev sloupce"]                                     =  vypise sloupce  * v pripade promena je jedna zavorka
-  df[promena]
-df["nazev sloupce"] > 50                                                          =  vypis s podminkou !! Vraci boolean !!
-df[df["nazev sloupce"] == "hodnota"]                                              =  vypis s podminkou
-df[df["nazev sloupce"] < "hodnota"]                                               =  vypis s podminkou
---
-  promena = df["nazev sloupce"] == "hodnota"
-  promena = df["nazev sloupce"] == "hodnota"
-  df[promena & promena]                                                           =  vypis dle podminek
-  
-  df[(df["sloupec"] == "hodnota") & (df["sloupec"] == "hodnota")]                 =  zapis v radku
---
-promena= df["sloupec"].isin(["hodnota", "hodnota"])
-df[promena]                                                                       =  zapis s funkci isin 
+          df[(df["sloupec"] == "hodnota") & (df["sloupec"] == "hodnota")]                 =  zapis v radku
+        --
+        promena= df["sloupec"].isin(["hodnota", "hodnota"])
+        df[promena]                                                                       =  zapis s funkci isin 
+
+     Columns
+        df["nazev novy sloupec"] = df["sloupec"] / 100                                    = vytvori novy sloupec s hodnoutou
+        df["nazev novy sloupec"] = df["sloupec"] / df["slopuec"] **2                      = dalsi priklad
+     
+     Summary statistic
+        
+         df.["sloupec"].mean() / min()/ max()
+         df.["slupec"]. agg(pct30)                                                        = PCT jsou procenta
+             df.[["sloupec", "sloupec"]].agg(pct30)
+         def pct40 (sloupec):
+              return sloupec.quantile(0.4)
+         df.["weight_kg"].cumsum()                                                        = vypise po radcich vcetne indexu
+         
+     Counting
+     
+     
