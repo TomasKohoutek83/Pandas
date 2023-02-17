@@ -48,7 +48,15 @@ Navod
         promena["sloupec"].value_couts(normalize = True)                                  = seradi dle poctu a zobayi v pomeru procentualne
         
      Group summary statistic
-        df
+        Priklad - slozity zapis
+        df[df["sloupec1"] == "hodnota1"] ["sloupec2"].mean()
+        df[df["sloupec1"] == "hodnota2"] ["sloupec2"].mean()
+        df[df["sloupec1"] == "hodnota3"] ["sloupec2"].mean()
+        Priklad - s pouzitim groupby
+        df.groupby("sloupec1")["sloupec2].mean()                                          = group s prumerem na dva sloupce.Prvni Slpupec je napr: barva (zluta hneda atd a sruhz sloupec je pak prumer dalsi hodnoty
+        df.groupby("sloupec1")["sloupec2].agg([min,max,sum])                              = prida k predchozimu prikladu jeste sloupec min,max,sum. AGG - pro vice funkci
+        df.groupby(["sloupec1", "sloupec2"])["sloupec3"].mean()                           = group nad dvema sloupci s jednim vysldenym sloupce
+        df.groupby(["sloupec1", "sloupec2"])[["sloupec3","sloupec4"]].mean()              = group nad dvema sloupci s dvema vysldenymi sloupci
         
         
         
