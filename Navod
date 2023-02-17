@@ -33,8 +33,7 @@ Navod
         df["nazev novy sloupec"] = df["sloupec"] / df["slopuec"] **2                      = dalsi priklad
      
      Summary statistic
-        
-         df.["sloupec"].mean() / min()/ max()
+         df.["sloupec"].mean() / min()/ max()                                             = .mean() - je prumer z vybranych hodnot
          df.["slupec"]. agg(pct30)                                                        = PCT jsou procenta
              df.[["sloupec", "sloupec"]].agg(pct30)
          def pct40 (sloupec):
@@ -42,5 +41,18 @@ Navod
          df.["weight_kg"].cumsum()                                                        = vypise po radcich vcetne indexu
          
      Counting
+        df.drop_duplicates(subset="sloupec")                                              = odstrani duplicity !!(Odstrani duplicity dle jmena ikdy maji jine dasli parametry rozdilne)
+        promena= df.drop_duplicates(subset=["sloupec_1", "sloupec_2"])                    = odstrani duplicity dle hodnot dvou sloupcu
+        promena["sloupec"].value_counts()                                                 = vypise pocty hodnot dle zadaneho sloupce
+        promena["sloupec"].value_couts(sort=True)                                         = seradi od nejvyssich
+        promena["sloupec"].value_couts(normalize = True)                                  = seradi dle poctu a zobayi v pomeru procentualne
+        
+     Group summary statistic
+        df
+        
+        
+        
+       
+        
      
      
