@@ -58,6 +58,12 @@ Navod
         df.groupby(["sloupec1", "sloupec2"])["sloupec3"].mean()                           = group nad dvema sloupci s jednim vysldenym sloupce
         df.groupby(["sloupec1", "sloupec2"])[["sloupec3","sloupec4"]].mean()              = group nad dvema sloupci s dvema vysldenymi sloupci
         
+     Picot Tables
+        df.pivot_table(values = "sloupec",index="hodnota")                                = seradi tabulku dle hodnoty pro sloupec (stejne jako groupby s mean!!!) to je defaultni!!!!
+        df.pivot_table(values = "sloupec",index = "hodnota, aggfunc = [np.mean, np.median])  = seradi tabulku dle hodnoty ale s vice vysledky !! musi byt import numpy!!
+        df.pivot_table(values = "sloupec1", index = "hodnota" , columns= "sloupec2")       = vytvori tabulku s radky sloupce1 a sluouci dle columns del hodnoty - zobrazi i NaN 
+        df.pivot_table(values = "sloupec1", index = "hodnota" , columns= "sloupec2",fill_value = 0)  = nahradi hodnoty NaN v predchozi tabulce hodnotou 0 
+        df.pivot_table(values = "sloupec1", index = "hodnota" , columns= "sloupec2",fill_value = 0, margins= True) = k predchozimu prikladu prida na konci sloupec s prumerem ke vsem radkum
         
         
        
