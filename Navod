@@ -33,9 +33,9 @@ Navod
         df["nazev novy sloupec"] = df["sloupec"] / df["slopuec"] **2                      = dalsi priklad
      
      Summary statistic
-         df.["sloupec"].mean() / min()/ max()                                             = .mean() - je prumer z vybranych hodnot
-         df.["slupec"]. agg(pct30)                                                        = PCT jsou procenta
-             df.[["sloupec", "sloupec"]].agg(pct30)
+         df["sloupec"].mean() / min()/ max()                                             = .mean() - je prumer z vybranych hodnot
+         df["slupec"]. agg(pct30)                                                        = PCT jsou procenta
+             df[["sloupec", "sloupec"]].agg(pct30)
          def pct40 (sloupec):
               return sloupec.quantile(0.4)
          df.["weight_kg"].cumsum()                                                        = vypise po radcich vcetne indexu
