@@ -47,7 +47,7 @@ Navod
         promena["sloupec"].value_couts(sort=True)                                         = seradi od nejvyssich
         promena["sloupec"].value_couts(normalize = True)                                  = seradi dle poctu a zobayi v pomeru procentualne
         
-     Group summary statistic
+     Groupby summary statistic
         Priklad - slozity zapis
         df[df["sloupec1"] == "hodnota1"] ["sloupec2"].mean()
         df[df["sloupec1"] == "hodnota2"] ["sloupec2"].mean()
@@ -58,15 +58,23 @@ Navod
         df.groupby(["sloupec1", "sloupec2"])["sloupec3"].mean()                           = group nad dvema sloupci s jednim vysldenym sloupce
         df.groupby(["sloupec1", "sloupec2"])[["sloupec3","sloupec4"]].mean()              = group nad dvema sloupci s dvema vysldenymi sloupci
         
-     Picot Tables
+     Pivot Tables
         df.pivot_table(values = "sloupec",index="hodnota")                                = seradi tabulku dle hodnoty pro sloupec (stejne jako groupby s mean!!!) to je defaultni!!!!
         df.pivot_table(values = "sloupec",index = "hodnota, aggfunc = [np.mean, np.median])  = seradi tabulku dle hodnoty ale s vice vysledky !! musi byt import numpy!!
         df.pivot_table(values = "sloupec1", index = "hodnota" , columns= "sloupec2")       = vytvori tabulku s radky sloupce1 a sluouci dle columns del hodnoty - zobrazi i NaN 
         df.pivot_table(values = "sloupec1", index = "hodnota" , columns= "sloupec2",fill_value = 0)  = nahradi hodnoty NaN v predchozi tabulce hodnotou 0 
         df.pivot_table(values = "sloupec1", index = "hodnota" , columns= "sloupec2",fill_value = 0, margins= True) = k predchozimu prikladu prida na konci sloupec s prumerem ke vsem radkum
         
+    
+     INdexing
+        df.set_index("sloupec")                                                            = misto ciselneho indexu je vybrany sloupec - vse ostatni zustava stejne
+        df.set_index(["sloupec1","sloupec2])                                               = seradi do indexu dve hodnoty - ukaze skupiny a pod skupiny      
+        df.reset_index()                                                                   = vyresetuje index
+        df.reset_index(drop=True)                                                          = odstrani index a  to zadany sloupec
+     
+     LOC and Iloc - koukonout na tema nemasmzsl vypisovat
         
-       
+        
         
      
      
